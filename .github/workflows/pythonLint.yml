@@ -1,6 +1,5 @@
 name: Python linting
-permissions:
-  security-events: read
+
 on:
   - workflow_dispatch
 
@@ -12,6 +11,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
-      - uses: advanced-security/python-lint-code-scanning-action@v1
+      - uses: psf/black@stable
         with:
-          linter: flake8
+          options: "--check --verbose"
+          src: "main.py"
