@@ -1,5 +1,6 @@
 name: Python linting
-
+permissions:
+  security-events: read
 on:
   - workflow_dispatch
 
